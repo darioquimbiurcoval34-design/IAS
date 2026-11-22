@@ -19,4 +19,11 @@ local function LoadModule(fileName)
 end
 
 LoadModule("config.lua")
-LoadModule("brain.lua")
+LoadModule("tasks/leveling.lua")
+LoadModule("tasks/items.lua")
+LoadModule("tasks/raids_sea.lua")
+local Brain = LoadModule("brain.lua")
+local HUD = LoadModule("hud.lua")
+
+if HUD and HUD.Init then HUD:Init() end
+if Brain and Brain.Start then Brain:Start() end
