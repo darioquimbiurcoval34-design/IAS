@@ -24,7 +24,7 @@ getgenv().QuantumKaitun = getgenv().QuantumKaitun or {
 
 local CONFIG_FILE = "QuantumKaitun_Config.json"
 
-function getgenv().QuantumKaitun:Save()
+function getgenv().QuantumKaitun.Save(self)
     if writefile then
         local data = {
             CurrentTheme = self.CurrentTheme,
@@ -36,7 +36,7 @@ function getgenv().QuantumKaitun:Save()
     end
 end
 
-function getgenv().QuantumKaitun:Load()
+function getgenv().QuantumKaitun.Load(self)
     if isfile and readfile and isfile(CONFIG_FILE) then
         local ok, data = pcall(function()
             return HttpService:JSONDecode(readfile(CONFIG_FILE))
