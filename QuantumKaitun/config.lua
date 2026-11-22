@@ -37,7 +37,7 @@ function getgenv().QuantumKaitun.Save(self)
 end
 
 function getgenv().QuantumKaitun.Load(self)
-    if isfile and readfile and isfile(CONFIG_FILE) then
+        if isfile and readfile then
         local ok, data = pcall(function()
             return HttpService:JSONDecode(readfile(CONFIG_FILE))
         end)
