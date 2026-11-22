@@ -19,4 +19,4 @@ local function LoadModule(fileName)
 end
 
 LoadModule("config.lua")
-LoadModule("main.lua")
+LoadModule("brain.lua")
